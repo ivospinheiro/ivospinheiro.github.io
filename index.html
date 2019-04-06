@@ -1,17 +1,20 @@
-import { Component } from "//unpkg.com/can@5/core.mjs";
+<script type="module">
 
-Component.extend({
-    tag: "my-counter",
-    view: `
-        Count: <span>{{count}}</span>
-        <button on:click='increment()'>+1</button>
-    `,
-    ViewModel: {
-        count: {default: 0},
-        increment() {
-            this.count++;
+    import { Component } from "//unpkg.com/can@5/core.mjs";
+
+    Component.extend({
+        tag: "my-counter",
+        view: `
+            Count: <span>{{count}}</span>
+            <button on:click='increment()'>+1</button>
+        `,
+        ViewModel: {
+            count: {default: 0},
+            increment() {
+                this.count++;
+            }
         }
-    }
-});
+    });
+</script>
 
-document.innerHTML = "<my-counter></my-counter>"
+<my-counter></my-counter>
